@@ -1,3 +1,8 @@
+do
+	local ui = game:GetService("CoreGui"):FindFirstChild("mainframe")
+	if ui then ui:Destroy() end
+end
+
 local lib = {}
 local themesettings = {
     Dark = {
