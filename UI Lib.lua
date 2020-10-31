@@ -132,6 +132,19 @@ local helioslib_by_dawid0001 = Instance.new("ScreenGui")
 helioslib_by_dawid0001.Name = "helioslib_by_dawid#0001"
 helioslib_by_dawid0001.Parent = game.CoreGui
 helioslib_by_dawid0001.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local usi = game:GetService("UserInputService")
+local uitoggled = false
+usi.InputBegan:Connect(function(io, p)
+    if io.KeyCode == Enum.KeyCode.RightShift then
+        if uitoggled = false
+	   helioslib_by_dawid0001.Enabled = false
+	   uitoggled = true
+else
+	 helioslib_by_dawid0001.Enabled = true
+	   uitoggled = false
+	end
+    end
+end)
 
 local function notification(text)
 	for i,v in next, helioslib_by_dawid0001 :GetChildren() do
