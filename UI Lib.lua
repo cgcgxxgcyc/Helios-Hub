@@ -1,5 +1,5 @@
 do
-	local ui = game:GetService("CoreGui"):FindFirstChild("helioslib_by_dawid0001")
+	local ui = game:GetService("CoreGui"):FindFirstChild("helioslib_by_dawid#0001")
 	if ui then ui:Destroy() end
 end
 
