@@ -42,9 +42,9 @@ end
 local TweenService = game:GetService("TweenService")
 function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
 local counter = 0
-local rainbowcolor = Color3.fromHSV(zigzag(counter),1,1)
+local rainbowcolor = Color3.fromHSV(zigzag(counter),0.6,1)
 game:GetService('RunService').Stepped:Connect(function()
-	rainbowcolor = Color3.fromHSV(zigzag(counter),1,1)
+	rainbowcolor = Color3.fromHSV(zigzag(counter),0.6,1)
 	counter = counter + 0.0010  
 end)
 local function ripple(obj, color)
