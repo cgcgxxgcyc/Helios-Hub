@@ -146,7 +146,7 @@ else
     end
 end)
 
-local function notification(text)
+function lib:notification(text)
 	for i,v in next, helioslib_by_dawid0001 :GetChildren() do
 		if v.Name == "notification" then
 			v:Destroy()
@@ -1723,14 +1723,14 @@ dark.MouseButton1Click:Connect(function()
 light.TextTransparency = 0.3
 dark.TextTransparency = 0
 writefile("heliostheme.helios", "Dark")
-notification("Next time you launch the script, the theme will be dark.")
+lib:notification("Next time you launch the script, the theme will be dark.")
 end)	
 
 light.MouseButton1Click:Connect(function()
 dark.TextTransparency = 0.3
 light.TextTransparency = 0
 writefile("heliostheme.helios", "Light")
-notification("Next time you launch the script, the theme will be light.")
+lib:notification("Next time you launch the script, the theme will be light.")
 end)	
 scrollframe.CanvasSize = UDim2.new(0, 0, 0, containerlist.AbsoluteContentSize.Y)
 end
