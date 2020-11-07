@@ -736,7 +736,7 @@ end
 			actualslide.AnchorPoint = Vector2.new(0, 0.5)
 			actualslide.BackgroundColor3 = themesettings[themesetting].SliderCircleColor
 			actualslide.BorderSizePixel = 0
-			actualslide.Position = UDim2.new(-0.00999999978, 2, 0.354999989, 0)
+			actualslide.Position = UDim2.new(placetoslide.AbsolutePosition.X)
 			actualslide.Size = UDim2.new(0.098718904, -4, 3.61909699, -4)
 
 			corner_3.CornerRadius = UDim.new(1000, 100)
