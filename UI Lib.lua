@@ -1607,6 +1607,7 @@ end
 
 		function tabcurrent:Label(name)
 
+		local labelfunc = {}
 			local button = Instance.new("TextButton")
 			local buttontext = Instance.new("TextLabel")
 			local corner = Instance.new("UICorner")
@@ -1637,6 +1638,10 @@ end
 
 			corner.Name = "corner"
 			corner.Parent = button
+			
+			function labelfunc:Change(name)
+			buttontext.Text = name	
+		        end
 			scrollframe.CanvasSize = UDim2.new(0, 0, 0, containerlist.AbsoluteContentSize.Y)
         end
         
