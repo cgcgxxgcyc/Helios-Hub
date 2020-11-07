@@ -1643,6 +1643,7 @@ end
 			buttontext.Text = name	
 		        end
 			scrollframe.CanvasSize = UDim2.new(0, 0, 0, containerlist.AbsoluteContentSize.Y)
+			return labelfunc
         end
         
         function tabcurrent:themeselector()
