@@ -25,7 +25,7 @@ ripplecolor = Color3.fromRGB(195,195,195)
 local theme = ""
 local themesetting = "Light"
 pcall(function()
-    theme = readfile("heliostheme.helios");
+    theme = readfile("heliostheme.txt");
 end);
 
 if theme == "Light" then
@@ -34,7 +34,7 @@ elseif theme == "Dark" then
 	themesetting = "Dark"
 else
 	themesetting = "Light"
-    writefile("heliostheme.helios", "Light")
+    writefile("heliostheme.txt", "Light")
 end	
 
 
