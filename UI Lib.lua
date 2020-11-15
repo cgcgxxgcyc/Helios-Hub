@@ -65,7 +65,7 @@ local function ripple(obj)
 		rippleEffectInner.Position =  UDim2.new(0.5, 0, 0.5, 0);
 		rippleEffectInner.Size = UDim2.new(0.93, 0, 0.93, 0);
 		rippleEffectInner.Image = "rbxassetid://2708891598";
-		rippleEffectInner.ImageColor3 = fromRGB(45, 45, 45);
+		rippleEffectInner.ImageColor3 = Color3.fromRGB(45, 45, 45);
 		rippleEffectInner.ImageTransparency = 0.7;
 		rippleEffectInner.ScaleType = Enum.ScaleType.Fit;
 		rippleEffect.Position =  UDim2.new(0, mouse.X - rippleEffect.AbsolutePosition.X, 0, mouse.Y - rippleEffect.AbsolutePosition.Y);
