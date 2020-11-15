@@ -62,14 +62,14 @@ local function ripple(obj)
 		rippleEffectInner.AnchorPoint = Vector2.new(0.5, 0.5);
 		rippleEffectInner.BackgroundTransparency = 1;
 		rippleEffectInner.BorderSizePixel = 0;
-		rippleEffectInner.Position = newUDim2(0.5, 0, 0.5, 0);
-		rippleEffectInner.Size = newUDim2(0.93, 0, 0.93, 0);
+		rippleEffectInner.Position =  UDim2.new(0.5, 0, 0.5, 0);
+		rippleEffectInner.Size = UDim2.new(0.93, 0, 0.93, 0);
 		rippleEffectInner.Image = "rbxassetid://2708891598";
 		rippleEffectInner.ImageColor3 = fromRGB(45, 45, 45);
 		rippleEffectInner.ImageTransparency = 0.7;
 		rippleEffectInner.ScaleType = Enum.ScaleType.Fit;
-		rippleEffect.Position = newUDim2(0, mouse.X - rippleEffect.AbsolutePosition.X, 0, mouse.Y - rippleEffect.AbsolutePosition.Y);
-		rippleEffect:TweenSizeAndPosition(newUDim2(10, 0, 10, 0), newUDim2(-4.5, 0, -4.5, 0), "Out", "Quad", 0.33);
+		rippleEffect.Position =  UDim2.new(0, mouse.X - rippleEffect.AbsolutePosition.X, 0, mouse.Y - rippleEffect.AbsolutePosition.Y);
+		rippleEffect:TweenSizeAndPosition( UDim2.new(10, 0, 10, 0),  UDim2.new(-4.5, 0, -4.5, 0), "Out", "Quad", 0.33);
 		for i = 1, 10 do
 			rippleEffect.ImageTransparency = rippleEffect.ImageTransparency + 0.01;
 			wait();
