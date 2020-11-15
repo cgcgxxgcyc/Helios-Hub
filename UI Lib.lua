@@ -47,34 +47,34 @@ game:GetService('RunService').Stepped:Connect(function()
 	rainbowcolor = Color3.fromHSV(zigzag(counter),0.6,1)
 	counter = counter + 0.0010  
 end)
-local function ripple(obj, color)
+local function ripple(obj)
 	spawn(function()
-		local Mouse = game.Players.LocalPlayer:GetMouse()
-		local Circle = Instance.new("ImageLabel")
-		Circle.Name = "Circle"
-		Circle.Parent = obj
-		Circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		Circle.BackgroundTransparency = 1.000
-		Circle.ZIndex = 10
-		Circle.Image = "rbxassetid://266543268"
-		Circle.ImageColor3 = Color3.fromRGB(themesettings[themesetting].ripplecolor)
-		Circle.ImageTransparency = 0.4
-		local NewX, NewY = Mouse.X - Circle.AbsolutePosition.X, Mouse.Y - Circle.AbsolutePosition.Y
-		Circle.Position = UDim2.new(0, NewX, 0, NewY)
-		local Size = 0
-		if obj.AbsoluteSize.X > obj.AbsoluteSize.Y then
-			Size = obj.AbsoluteSize.X * 1.5
-		elseif obj.AbsoluteSize.X < obj.AbsoluteSize.Y then
-			Size = obj.AbsoluteSize.Y * 1.5
-		elseif obj.AbsoluteSize.X == obj.AbsoluteSize.Y then
-			Size = obj.AbsoluteSize.X * 1.5
-		end
-		Circle:TweenSizeAndPosition(UDim2.new(0, Size, 0, Size), UDim2.new(0.5, - Size / 2, 0.5, - Size / 2), "Out", "Quad", 0.5, false)
-		for i = 1, 20 do
-			Circle.ImageTransparency = Circle.ImageTransparency + 0.05
-			wait(0.3 / 10)
-		end
-		Circle:Destroy()
+		local rippleEffect = Instance.new("ImageLabel", obj);
+		local rippleEffectInner = Instance.new("ImageLabel", rippleEffect);
+		rippleEffect.Name = "rippleEffect";
+		rippleEffect.BackgroundTransparency = 1;
+		rippleEffect.BorderSizePixel = 0;
+		rippleEffect.Image = "rbxassetid://2708891598";
+		rippleEffect.ImageColor3 = Color3.fromRGB(themesettings[themesetting].ripplecolor)
+		rippleEffect.ImageTransparency = 0.7;
+		rippleEffect.ScaleType = Enum.ScaleType.Fit;
+		rippleEffectInner.Name = "rippleEffect";
+		rippleEffectInner.AnchorPoint = Vector2.new(0.5, 0.5);
+		rippleEffectInner.BackgroundTransparency = 1;
+		rippleEffectInner.BorderSizePixel = 0;
+		rippleEffectInner.Position = newUDim2(0.5, 0, 0.5, 0);
+		rippleEffectInner.Size = newUDim2(0.93, 0, 0.93, 0);
+		rippleEffectInner.Image = "rbxassetid://2708891598";
+		rippleEffectInner.ImageColor3 = fromRGB(45, 45, 45);
+		rippleEffectInner.ImageTransparency = 0.7;
+		rippleEffectInner.ScaleType = Enum.ScaleType.Fit;
+		rippleEffect.Position = newUDim2(0, mouse.X - rippleEffect.AbsolutePosition.X, 0, mouse.Y - rippleEffect.AbsolutePosition.Y);
+		rippleEffect:TweenSizeAndPosition(newUDim2(10, 0, 10, 0), newUDim2(-4.5, 0, -4.5, 0), "Out", "Quad", 0.33);
+		for i = 1, 10 do
+			rippleEffect.ImageTransparency = rippleEffect.ImageTransparency + 0.01;
+			wait();
+		end;
+		rippleEffect:Destroy();
 	end)
 end
 
