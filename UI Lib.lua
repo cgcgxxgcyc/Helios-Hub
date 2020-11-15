@@ -662,12 +662,14 @@ end
 				if t == true then
 					fill:TweenPosition(UDim2.new(0, 2, 0.5, 0), "In", "Quint", 0.2)
                     falsetoggle:Play()
+						ripple(toggle, Color3.fromRGB(193, 193, 193))
 				elseif t == false then
 					fill:TweenPosition(UDim2.new(0.528, 2,0.5, 0), "In", "Quint", 0.2)
                     truetoggle:Play()
+						ripple(toggle, Color3.fromRGB(193, 193, 193))
 				end
 				t = not t
-				ripple(toggle, Color3.fromRGB(193, 193, 193))
+				
 				pcall(callback, t)
             end)
             
