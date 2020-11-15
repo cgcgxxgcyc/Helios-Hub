@@ -69,7 +69,7 @@ local function ripple(obj)
 		rippleEffectInner.ImageTransparency = 0.7;
 		rippleEffectInner.ScaleType = Enum.ScaleType.Fit;
 		rippleEffect.Position =  UDim2.new(0, mouse.X - rippleEffect.AbsolutePosition.X, 0, mouse.Y - rippleEffect.AbsolutePosition.Y);
-		rippleEffect:TweenSizeAndPosition( UDim2.new(100, 0, 100, 0),  UDim2.new(-4.5, 0, -4.5, 0), "Out", "Quad", 0.33);
+		rippleEffect:TweenSizeAndPosition( UDim2.new(30, 0, 30, 0),  UDim2.new(-4.5, 0, -4.5, 0), "Out", "Quad", 0.33);
 		for i = 1, 10 do
 			rippleEffect.ImageTransparency = rippleEffect.ImageTransparency + 0.01;
 			wait();
