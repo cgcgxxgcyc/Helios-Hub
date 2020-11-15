@@ -1730,14 +1730,14 @@ if themesetting == "Light" then
 dark.MouseButton1Click:Connect(function()
 light.TextTransparency = 0.3
 dark.TextTransparency = 0
-writefile("heliostheme.helios", "Dark")
+writefile("heliostheme.txt", "Dark")
 lib:notification("Next time you launch the script, the theme will be dark.")
 end)	
 
 light.MouseButton1Click:Connect(function()
 dark.TextTransparency = 0.3
 light.TextTransparency = 0
-writefile("heliostheme.helios", "Light")
+writefile("heliostheme.txt", "Light")
 lib:notification("Next time you launch the script, the theme will be light.")
 end)	
 scrollframe.CanvasSize = UDim2.new(0, 0, 0, containerlist.AbsoluteContentSize.Y)
