@@ -2,7 +2,7 @@ do
 	local ui = game:GetService("CoreGui"):FindFirstChild("helioslib_by_dawid#0001")
 	if ui then ui:Destroy() end
 end
-
+local mouse = game:GetService("Players").LocalPlayer:GetMouse();
 local lib = {}
 local themesettings = {
     Dark = {
