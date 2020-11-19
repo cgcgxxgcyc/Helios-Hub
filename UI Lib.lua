@@ -111,6 +111,127 @@ coroutine.wrap(
 	end
 )()
 
+function lib:notification(text)
+	for i, v in next, helioslib:GetChildren() do
+		if v.Name == "notificationframe" then
+			v:Destroy()
+		end
+	end
+	local notificationframe = Instance.new("Frame")
+	local notificationuicorner = Instance.new("UICorner")
+	local Glow = Instance.new("ImageLabel")
+	local text = Instance.new("TextLabel")
+	local container = Instance.new("Frame")
+	local containeruicorner = Instance.new("UICorner")
+	local okay = Instance.new("TextButton")
+	local loaduicorner = Instance.new("UICorner")
+	local desc = Instance.new("TextLabel")
+
+
+	notificationframe.Name = "notificationframe"
+	notificationframe.Parent = helioslib
+	notificationframe.AnchorPoint = Vector2.new(0.5, 0.5)
+	notificationframe.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+	notificationframe.Position = UDim2.new(0.5, 0, 0.50856787, 0)
+	notificationframe.Size = UDim2.new(0, 406, 0, 194)
+
+	notificationuicorner.CornerRadius = UDim.new(0, 6)
+	notificationuicorner.Name = "notificationuicorner"
+	notificationuicorner.Parent = notificationframe
+
+	Glow.Name = "Glow"
+	Glow.Parent = notificationframe
+	Glow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Glow.BackgroundTransparency = 1.000
+	Glow.BorderSizePixel = 0
+	Glow.Position = UDim2.new(0, -15, 0, -15)
+	Glow.Size = UDim2.new(1, 30, 1, 30)
+	Glow.ZIndex = 0
+	Glow.Image = "rbxassetid://4996891970"
+	Glow.ImageColor3 = Color3.fromRGB(15, 15, 15)
+	Glow.ScaleType = Enum.ScaleType.Slice
+	Glow.SliceCenter = Rect.new(20, 20, 280, 280)
+
+	text.Name = "text"
+	text.Parent = notificationframe
+	text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	text.BackgroundTransparency = 1.000
+	text.Position = UDim2.new(0.0470411777, 0, 0.0600325875, 0)
+	text.Size = UDim2.new(0, 106, 0, 28)
+	text.Font = Enum.Font.GothamSemibold
+	text.Text = "Notification"
+	text.TextColor3 = Color3.fromRGB(255, 255, 255)
+	text.TextSize = 18.000
+	text.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	text.TextWrapped = true
+	text.TextXAlignment = Enum.TextXAlignment.Left
+
+	container.Name = "container"
+	container.Parent = notificationframe
+	container.BackgroundColor3 = Color3.fromRGB(51, 51, 51)
+	container.Position = UDim2.new(0.031752713, 0, 0.228634387, 0)
+	container.Size = UDim2.new(0, 383, 0, 142)
+
+	containeruicorner.CornerRadius = UDim.new(0, 6)
+	containeruicorner.Name = "containeruicorner"
+	containeruicorner.Parent = container
+
+	okay.Name = "okay"
+	okay.Parent = container
+	okay.AnchorPoint = Vector2.new(0.5, 0.5)
+	okay.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+	okay.BackgroundTransparency = -0.050
+	okay.Position = UDim2.new(0.499596477, 0, 0.844715297, 0)
+	okay.Size = UDim2.new(0, 368, 0, 31)
+	okay.AutoButtonColor = false
+	okay.Font = Enum.Font.Gotham
+	okay.Text = "Okay"
+	okay.TextColor3 = Color3.fromRGB(255, 255, 255)
+	okay.TextSize = 14.000
+
+	loaduicorner.CornerRadius = UDim.new(0, 3)
+	loaduicorner.Name = "loaduicorner"
+	loaduicorner.Parent = okay
+
+	desc.Name = "desc"
+	desc.Parent = notificationframe
+	desc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	desc.BackgroundTransparency = 1.000
+	desc.Position = UDim2.new(0.226844221, 0, 0.410032541, 0)
+	desc.Size = UDim2.new(0, 223, 0, 42)
+	desc.Font = Enum.Font.GothamSemibold
+	desc.Text = text
+	desc.TextColor3 = Color3.fromRGB(255, 255, 255)
+	desc.TextScaled = true
+	desc.TextSize = 18.000
+	desc.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+	desc.TextWrapped = true
+	
+	okay.MouseEnter:Connect(
+		function()
+			TweenService:Create(
+				okay,
+				TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+				{BackgroundColor3 = Color3.fromRGB(71, 71, 71)}
+			):Play()
+		end
+	)
+
+	okay.MouseLeave:Connect(
+		function()
+			TweenService:Create(
+				okay,
+				TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+				{BackgroundColor3 = Color3.fromRGB(61, 61, 61)}
+			):Play()
+		end
+	)
+	
+	okay.MouseButton1Click:Connect(function()
+		notificationframe:Destroy()
+	end)
+end
+
 function lib:MainWindow(text)
 	local ft = false
 
@@ -1011,6 +1132,7 @@ function lib:MainWindow(text)
 		end
 
 		function tab:Label(text)
+			local labelfunc = {}
 			local label = Instance.new("TextButton")
 			local labeluicorner = Instance.new("UICorner")
 
@@ -1030,6 +1152,10 @@ function lib:MainWindow(text)
 			labeluicorner.Name = "buttonuicorner"
 			labeluicorner.Parent = label
 			scrollframe.CanvasSize = UDim2.new(0, 0, 0, scrolluilist.AbsoluteContentSize.Y)
+			function labelfunc:Change(name)
+				label.Text = name
+			end
+			return labelfunc
 		end
 
 		function tab:Spliter()
