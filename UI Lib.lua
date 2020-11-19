@@ -111,7 +111,7 @@ coroutine.wrap(
 	end
 )()
 
-function lib:notification(text)
+function lib:notification(textt)
 	for i, v in next, helioslib:GetChildren() do
 		if v.Name == "notificationframe" then
 			v:Destroy()
@@ -200,7 +200,7 @@ function lib:notification(text)
 	desc.Position = UDim2.new(0.226844221, 0, 0.410032541, 0)
 	desc.Size = UDim2.new(0, 223, 0, 42)
 	desc.Font = Enum.Font.GothamSemibold
-	desc.Text = text
+	desc.Text = textt
 	desc.TextColor3 = Color3.fromRGB(255, 255, 255)
 	desc.TextScaled = true
 	desc.TextSize = 18.000
