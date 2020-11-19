@@ -1317,6 +1317,7 @@ function lib:MainWindow(text)
 
 	return window
 end
+return lib
 
 --[[
 local s = lib:MainWindow("cum.lua")
