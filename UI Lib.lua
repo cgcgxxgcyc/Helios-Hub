@@ -587,15 +587,11 @@ function lib:MainWindow(text)
 				function()
 					if t == true then
 						fill:TweenPosition(UDim2.new(0, 2, 0.5, 0), "In", "Linear", 0.2)
-						if callback then
-							callback(false)
-						end
+						callback(false)
 						t = not t
 					else
 						fill:TweenPosition(UDim2.new(0, 17, 0.5, 0), "Out", "Linear", 0.2)
-						if callback then
-							callback(true)
-						end
+					        callback(true)
 						t = not t
 					end
 				end
