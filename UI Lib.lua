@@ -587,15 +587,14 @@ function lib:MainWindow(text)
 				function()
 					if t == true then
 						fill:TweenPosition(UDim2.new(0, 2, 0.5, 0), "In", "Linear", 0.2)
-						callback(false)
 						t = not t
 					else
 						fill:TweenPosition(UDim2.new(0, 17, 0.5, 0), "Out", "Linear", 0.2)
-					        callback(true)
 						t = not t
 					end
 				end
 			)
+			pcall(callback, t)
 			scrollframe.CanvasSize = UDim2.new(0, 0, 0, scrolluilist.AbsoluteContentSize.Y)
 		end
 
