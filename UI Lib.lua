@@ -592,9 +592,9 @@ function lib:MainWindow(text)
 						fill:TweenPosition(UDim2.new(0, 17, 0.5, 0), "Out", "Linear", 0.2)
 						t = not t
 					end
+					pcall(callback, t)
 				end
 			)
-			pcall(callback, t)
 			scrollframe.CanvasSize = UDim2.new(0, 0, 0, scrolluilist.AbsoluteContentSize.Y)
 		end
 
