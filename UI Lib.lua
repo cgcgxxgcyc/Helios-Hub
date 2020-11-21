@@ -1341,7 +1341,7 @@ function lib:MainWindow(text)
 				item.AnchorPoint = Vector2.new(0.5, 0.5)
 				item.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
 				item.Position = UDim2.new(0.491315126, 0, 0.177215189, 0)
-				item.Size = UDim2.new(0, 396, 0, 28)
+				item.Size = UDim2.new(0, 396, 0, 24)
 				item.AutoButtonColor = false
 				item.Font = Enum.Font.Gotham
 				item.Text = v
@@ -1382,6 +1382,7 @@ function lib:MainWindow(text)
 						d = not d
 						scrollframe.CanvasSize = UDim2.new(0, 0, 0, scrolluilist.AbsoluteContentSize.Y)
 						title.Text = name .. " - " .. v
+						callback(v)
 					end
 				)
 				dropdownscrollframe.CanvasSize = UDim2.new(0, 0, 0, dropscrolluilist.AbsoluteContentSize.Y)
