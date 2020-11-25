@@ -1234,7 +1234,7 @@ function lib:MainWindow(text)
 				function(ep)
 					if ep then
 						if #textboxmain.Text > 0 then
-							callback(textboxmain.Text)
+							pcall(callback, textboxmain.Text)
 							if disapper then
 								textboxmain.Text = ""
 							end
