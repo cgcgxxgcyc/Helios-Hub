@@ -197,7 +197,11 @@ end
 function HeliosESP:TeamcheckToggle(status)
     teamcheck = status
 end
+function HeliosESP:BoxFilledToggle(status)
+    BoxFilled = status
+end
 function HeliosESP:SetESPColor(color)
     espcolor = color
 end
+
 return HeliosESP
