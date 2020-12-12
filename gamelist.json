@@ -10,6 +10,6 @@
 	"4893679160": {"name": "Big Brain Simulator", "script": "BigBrainSimulator.lua"},
 	"5709572883": {"name": "Lift Legends Simulator", "script": "LiftLegendsSimulator.lua"},
 	"3823781113": {"name": "Saber Simulator", "script": "SaberSimulator.lua"},
-	"142823291": {"name": "Murder Mystery 2", "script": "MurderMystery.lua"}
+	"142823291": {"name": "Murder Mystery 2", "script": "MurderMystery.lua"},
         "4894544370": {"name": "Pistol 1v1", "script": "Pistol1v1.lua"}
 }
